@@ -7,7 +7,7 @@
         <div class="container">
             <h1>Comics : {{count($comics)}}</h1>
 
-            <a class="btn btn-primary" href="">Create</a>
+            <a class="btn btn-primary" href="{{route('users.create')}}">Create</a>
             <br>
             <br>
 
