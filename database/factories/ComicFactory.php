@@ -17,7 +17,7 @@ class ComicFactory extends Factory
     public function definition()
     {
         return [
-            'title' => fake()->sentence(),
+            'title' => fake()->unique()->sentence(),
             'price' => fake()->randomFloat(2, 10, 100),
             'release_date' => fake()->date(),
 
