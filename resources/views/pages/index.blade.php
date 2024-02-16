@@ -20,7 +20,7 @@
                         {{ $comic -> title }}
                     </a>
 
-                    <a class="btn btn-primary text-light" href="">
+                    <a class="btn btn-primary text-light mx-2" href="{{route('users.edit',  $comic -> id)}}">
                         EDIT
                     </a>
 

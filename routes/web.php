@@ -20,3 +20,9 @@ Route::get('/users/{id}', [ComicController::class, 'show'])
 
 Route::delete('/users/{id}', [ComicController::class, 'destroy'])
     ->name('users.destroy');
+
+Route::get('/users/{id}/edit', [ComicController::class, 'edit'])
+    ->name('users.edit');
+
+Route::put('/users/{id}/edit', [ComicController::class, 'update'])
+    ->name('users.update');
