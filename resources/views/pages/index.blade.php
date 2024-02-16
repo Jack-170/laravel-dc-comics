@@ -15,10 +15,24 @@
                 @foreach ($comics as $comic )
 
 
-                <li>
+                <li class="p-2" >
                     <a href="{{ route ('users.show', $comic -> id)}}">
                         {{ $comic -> title }}
                     </a>
+
+                    <a class="btn btn-primary text-light" href="">
+                        EDIT
+                    </a>
+
+                    <form class="d-inline p-2"
+                     action="{{route('users.destroy',$comic -> id )}}"
+                     method="POST">
+
+                     @csrf
+                     @method('DELETE')
+
+                        <input class="btn btn-danger text-light" type="submit" value="X">
+                    </form>
                 </li>
 
                 @endforeach
