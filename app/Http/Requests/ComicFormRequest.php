@@ -29,4 +29,17 @@ class ComicFormRequest extends FormRequest
             'price' => 'required|numeric',
         ];
     }
+    public function messages()
+    {
+        return [
+            'title.required' => 'Il titolo è obbligatorio.',
+            'title.string' => 'Il titolo deve essere una stringa.',
+            'title.min' => 'Il titolo deve essere lungo almeno :min caratteri.',
+            'title.max' => 'Il titolo non può superare :max caratteri.',
+            'release_date.required' => 'La data di uscita è obbligatoria.',
+            'release_date.date' => 'La data di uscita non è valida.',
+            'price.required' => 'Il prezzo è obbligatorio.',
+            'price.numeric' => 'Il prezzo deve essere un numero.',
+        ];
+    }
 }
