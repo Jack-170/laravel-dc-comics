@@ -3,40 +3,47 @@
     <title>Home</title>
 @endsection
 @section('content')
-    <div class="container-fluid">
-        <div class="container">
-            <h1>Comics : {{count($comics)}}</h1>
 
-            <a class="btn btn-primary" href="{{route('users.create')}}">Create</a>
-            <br>
-            <br>
+    <main>
+        <div class="container-fluid">
+            <div class="container">
+                <h1>Comics : {{count($comics)}}</h1>
 
-            <ol>
-                @foreach ($comics as $comic )
+                <a class="btn btn-primary" href="{{route('users.create')}}">Create</a>
+                <br>
+                <br>
+
+                <ol>
+                    @foreach ($comics as $comic )
 
 
-                <li class="p-2" >
-                    <a href="{{ route ('users.show', $comic -> id)}}">
-                        {{ $comic -> title }}
-                    </a>
+                    <li class="p-2" >
+                        <a href="{{ route ('users.show', $comic -> id)}}">
+                            {{ $comic -> title }}
+                        </a>
 
-                    <a class="btn btn-primary text-light mx-2" href="{{route('users.edit',  $comic -> id)}}">
-                        EDIT
-                    </a>
+                        <a class="btn btn-primary text-light mx-2" href="{{route('users.edit',  $comic -> id)}}">
+                            EDIT
+                        </a>
 
-                    <form class="d-inline p-2"
-                     action="{{route('users.destroy',$comic -> id )}}"
-                     method="POST">
+                        <form class="d-inline p-2"
+                         action="{{route('users.destroy',$comic -> id )}}"
+                         method="POST"
+                         onsubmit="return confirm('Confermare?');">
 
-                     @csrf
-                     @method('DELETE')
 
-                        <input class="btn btn-danger text-light" type="submit" value="X">
-                    </form>
-                </li>
+                         @csrf
+                         @method('DELETE')
 
-                @endforeach
-            </ol>
+                            <input  class="btn btn-danger text-light" type="submit" value="X">
+                        </form>
+                    </li>
+
+                    @endforeach
+                </ol>
+            </div>
         </div>
-    </div>
+
+    </main>
+
 @endsection

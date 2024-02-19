@@ -1,7 +1,14 @@
 @import "~bootstrap/scss/bootstrap";
 
+main{
+    li{
+        border: 1px solid black;
+        list-style-type: decimal;
+
+    }
+}
 
 li{
-    border: 1px solid black;
-
+    list-style-type:none;
 }
+

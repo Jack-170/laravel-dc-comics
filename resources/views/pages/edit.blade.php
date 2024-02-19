@@ -7,6 +7,17 @@
         <div class="container">
             <h1>Edit comic</h1>
             <br> <br> <br>
+
+            @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <form
              action="{{route('users.update', $comic -> id)}}"
              method="POST">
